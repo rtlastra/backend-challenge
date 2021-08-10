@@ -1,13 +1,15 @@
 import { Injectable } from '@nestjs/common';
-import { HttpCoordinadoraRequestService } from './http-coordinadora-request.service';
 
+import TrackingByGuideInterface from '../interfaces/tracking-by-guide.interface';
+import TrackingByTagInterface from '../interfaces/tracking-by-tag.interface';
+import { HttpCoordinadoraRequestService } from './http-coordinadora-request.service';
 @Injectable()
 export default class TrackingService {
   constructor(
     private readonly httpCoordinadoraRequestService: HttpCoordinadoraRequestService
   ) { }
 
-  async getTrackingInformation(id: string) {
+  async getTrackingInformation(id: string): Promise<TrackingByGuideInterface | TrackingByTagInterface> {
     const trackingByGuide = await this.getTrackingByGuide(id);
     if (trackingByGuide) return trackingByGuide;
     const trackingByTag = await this.getTrackingByTag(id);
@@ -15,7 +17,7 @@ export default class TrackingService {
     throw new Error('Número de guía o etiqueta invalida');
   }
 
-  private async getTrackingByGuide(code: string) {
+  private async getTrackingByGuide(code: string): Promise<TrackingByGuideInterface> {
     const resultByGuide = await this.httpCoordinadoraRequestService.getInformation(true);
     const guide = resultByGuide.guias.filter(guia => guia.codigo_remision === code);
     if (guide.length === 0) return null;
@@ -44,7 +46,7 @@ export default class TrackingService {
     }
   }
 
-  private async getTrackingByTag(code: string) {
+  private async getTrackingByTag(code: string): Promise<TrackingByTagInterface> {
     const resultByTag = await this.httpCoordinadoraRequestService.getInformation(false);
     const tag = resultByTag.reduce((a, b) => {
       return b.etiqueta1d === code

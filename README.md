@@ -53,3 +53,8 @@ qué sirve
 6) A bases de datos no relacionales (NOSQL).
 7) Se refiere que se esta intentado realizar una petición a un servidor que esta en un dominio diferente al del origen.
 ```
+### Notas ejercicio average:
+```
+- Un error funcional de este ejercicio es que esta retornando a + b / 2, es decir el orden de los operadores esta mal ya que primero realizara la división y luego la suma. Esto se solucionaria agregando parentesis quedando asi (a+b)/2.
+- Hay otras observaciones que no son errores pero se deberian tener en cuenta como que la función es asincrona y esto no se necesita ya que no hay ninguna instrucción que requiera de esta funcionalidad y tampoco deberia estar un try catch ya que a y b son números y la suma de dos numeros dividido entre dos nunca retornara un error.
+```
