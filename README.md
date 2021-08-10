@@ -1,75 +1,55 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo_text.svg" width="320" alt="Nest Logo" /></a>
-</p>
-
-[travis-image]: https://api.travis-ci.org/nestjs/nest.svg?branch=master
-[travis-url]: https://travis-ci.org/nestjs/nest
-[linux-image]: https://img.shields.io/travis/nestjs/nest/master.svg?label=linux
-[linux-url]: https://travis-ci.org/nestjs/nest
-  
-  <p align="center">A progressive <a href="http://nodejs.org" target="blank">Node.js</a> framework for building efficient and scalable server-side applications, heavily inspired by <a href="https://angular.io" target="blank">Angular</a>.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore"><img src="https://img.shields.io/npm/dm/@nestjs/core.svg" alt="NPM Downloads" /></a>
-<a href="https://travis-ci.org/nestjs/nest"><img src="https://api.travis-ci.org/nestjs/nest.svg?branch=master" alt="Travis" /></a>
-<a href="https://travis-ci.org/nestjs/nest"><img src="https://img.shields.io/travis/nestjs/nest/master.svg?label=linux" alt="Linux" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#5" alt="Coverage" /></a>
-<a href="https://gitter.im/nestjs/nestjs?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=body_badge"><img src="https://badges.gitter.im/nestjs/nestjs.svg" alt="Gitter" /></a>
-<a href="https://opencollective.com/nest#backer"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec"><img src="https://img.shields.io/badge/Donate-PayPal-dc3d53.svg"/></a>
-  <a href="https://twitter.com/nestframework"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
-
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Challenge
 
 ## Installation
 
 ```bash
-$ npm install
+# node modules
+$ yarn install
 ```
 
 ## Running the app
 
 ```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
+Add .env file
+$ yarn start:dev
 ```
-
+## Env example
+```bash 
+$ URL_GUIDE:
+$ URL_TRACKING:
+```
 ## Test
 
 ```bash
 # unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+$ yarn test
 ```
+## Doc
 
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-  Nest is [MIT licensed](LICENSE).
+```bash
+# Swagger
+$ http://localhost:8080/challenge/docs
+```
+## Questions
+```
+1) Con sus propias palabras explique que es una inyección de dependencias y para
+qué sirve
+2) Explique con sus propias palabras las diferencias entre asincrono y sincrono
+3) Cual es la importancia del uso de promesas en un proyecto
+4) Cual es la importancia de usar ORM dentro de un proyecto, ventaja y desventaja
+5) Que diferencia hay entre una base de datos SQL, NOSQL
+6) Si hablo de colección y documentos me refiero a
+7) Si una aplicación está sacando error de CORS a que se está refiriendo
+```
+## Answers
+```
+1) Es una practica de programación orientada a objetos que busca remover la responsabilidad de la creación de las dependencias de una clase de tal forma que estas le sean suministradas en la creación.
+2) Sincrono es una ejecución secuencial en donde la proxima instrucción no se ejecutara hasta finalizar la anterior por el contrario asincrono no espera finalizar la instrucción previa para comenzar con la siguiente.
+3) Las promesas son importantes ya que estas brindan una forma simple de trabajar con operaciones asincronas, estas operaciones tambien podrian ser resueltas con callbacks pero estos vuelven el código complejo y dificil de mantener. 
+4) La ventaja de usar un ORM dentro de un proyecto es que simplifica el codígo ya que permite trabajar con objetos en vez de respuestas de queries, pero al mismo tiempo pueden llegar a reducir el rendimiento de la aplicación si no se usan correctamente al generar problemas como el n+1.
+5) Las diferencias es que los motores de bases de datos SQL estan optimizados para trabajar con conjuntos de datos bien estructurados donde es posible normalizar la información por el contrario los motores NOSQL son mas aptos para tarabajar con datos no estructurados o que no siguien un esquema.
+6) A bases de datos no relacionales (NOSQL).
+7) Se refiere que se esta intentado realizar una petición a un servidor que esta en un dominio diferente al del origen.
+```
